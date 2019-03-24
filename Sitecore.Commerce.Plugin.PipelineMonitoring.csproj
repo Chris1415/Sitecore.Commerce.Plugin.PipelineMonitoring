@@ -40,6 +40,5 @@
   <ItemGroup>
     <Folder Include="Components\" />
     <Folder Include="Entities\" />
-    <Folder Include="Pipelines\Arguments\" />
   </ItemGroup>
 </Project>

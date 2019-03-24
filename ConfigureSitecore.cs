@@ -23,12 +23,10 @@ namespace Sitecore.Commerce.Plugin.PipelineMonitoring
             services.RegisterAllPipelineBlocks(assembly);
 
             services.Sitecore().Pipelines(config => config
-                .AddPipeline<ITriggerStackedPipelineMonitoringLog, TriggerStackedPipelineMonitoringLog>(c => c
-                    .Add<OutputStackedPipelineMonitoringLog>())
                .ConfigurePipeline<IStartNodePipeline>(configure => configure
                     .Add<OutputStackedPipelineMonitoringLog>().After<StartNodeLogConfigurationBlock>())
                .ConfigurePipeline<IConfigureServiceApiPipeline>(c => c
-                    .Add<PipelineMonitoring.ConfigureServiceApiBlock>()));
+                    .Add<ConfigureServiceApiBlock>()));
 
             services.RegisterAllCommands(assembly);
         }
